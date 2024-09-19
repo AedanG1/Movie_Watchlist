@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles.css" rel="stylesheet">
+    <title>Wanna Watch - Search</title>
+</head>
+<body>
+    <div id="content">
+        <div id="title-section">
+            <h1>Wanna Watch</h1> 
+            <a href="./index.html">← View your Watchlist</a>
+        </div>
+        <hr class="solid-divider">
+        <div id="search-section">
+            <form>
+                <select id="region-select-search">
+                    <option value="AU">AUS</option>
+                    <option value="US">USA</option>
+                </select>
+                <input id="search-input" type="text" placeholder="Search for something to watch">
+                <button id="search-btn" type="submit">Search</button>
+            </form>
+        </div>
+        <div id="search-results"></div>
+    </div>
+<script src="./main.js" type="module"></script>
+</body>
+</html>

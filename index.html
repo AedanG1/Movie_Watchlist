@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanna Watch</title>
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+    <div id="content">
+        <div id="title-section">
+            <h1>Wanna Watch</h1> 
+            <a href="./search.html">Search for a movie →</a>
+        </div>
+        <hr class="solid-divider">
+        <div id="region-container">
+            <form>
+                <select id="region-select-watchlist">
+                    <option value="AU">AUS</option>
+                    <option value="US">USA</option>
+                </select>
+            </form>
+        </div>
+
+        <div id="watchlist-container">
+            <div id="empty-watchlist" class="empty-state hidden">
+                <h2>Your Binge list is empty!</h2>
+                <h2>Search for movies and shows to add to your Binge list</h2>
+            </div>
+        </div>
+    </div>
+<script src="./main.js" type="module"></script>
+</body>
+</html>

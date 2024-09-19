@@ -1,0 +1,372 @@
+@font-face {
+    font-family: Akshar;
+    src: url(./fonts/Akshar-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(./fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+    font-family: Inter-Italic;
+    src: url(./fonts/Inter-Italic-VariableFont_opsz\,wght.ttf);
+}
+
+:root {
+    --Border: #808080;
+    --Placeholder: #A0A0A0;
+    --Brand-color: #EA2B1F;
+    --P: #202020;
+    --Description: #6B7280;
+    --Skeleton: hwb(0 84% 16%); 
+}
+
+body {
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background-color: white;
+    margin: 0;
+    font-size: 16px;
+}
+
+p {
+    margin: 0;
+}
+
+h1 {
+    /* text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25); */
+    font-family: Akshar;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -1.28px;
+    background: linear-gradient(90deg, #00A1FF 0%, #C16BFF 49.5%, #FF0008 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    color: var(--Placeholder);
+    text-align: center;
+    font-family: Akshar;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--P);
+    font-size: 0.9rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.solid-divider {
+    border: 1px solid #e9e9e9;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 32px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 12px;
+}
+
+#title-section {
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+}
+
+select {
+    height: fit-content;
+    border-radius: 4px;
+    border: 0.5px solid var(--Border);
+    display: flex;
+    padding: 4px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    /* Dark inputs */
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+}
+
+#search-section {
+    max-width: 420px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#search-section > form {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+}
+
+#search-section > form > select {
+    height: 100%;
+}
+
+
+#search-input {
+    font-family: Inter;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: inline-flex;
+    padding: 8px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    border: 0.5px solid var(--Border);
+    width: 100%;
+    
+    /* Inputs */
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+}
+
+input#search::placeholder {
+    color: var(--Placeholder);
+}
+
+#search-btn {
+    background: white;
+    border: 0.5px solid var(--Border);
+    border-radius: 4px;
+    padding: 0 12px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+}
+
+#search-btn:active {
+    background: var(--Placeholder);
+}
+
+.empty-state {
+    margin-top: 64px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+}
+
+#region-container {
+    max-width: 420px;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#search-results {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 150px;
+    align-items: center;
+}
+
+#watchlist-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 150px;
+    align-items: center;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 48px;
+    gap: 16px;
+    height: 200px;
+    width: 100%;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 77%;
+}
+
+.poster {
+    width: auto;
+    max-width: 120px;
+    max-height: 100%;
+    border-radius: 8px;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.title-info {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 12px;
+    max-width: 70%;
+    text-wrap: nowrap;
+}
+
+.title {
+    font-weight: bold;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}
+
+.addButton {
+    font-size: 0.9rem;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.removeButton {
+    font-size: 0.9rem;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.subtle {
+    font-weight: 400 !important;
+    color: var(--Description);
+}
+
+.genre {
+    max-width: 200px;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}
+
+.description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--Description);
+    text-overflow: ellipsis;
+    margin-bottom: 8px;
+}
+
+.watch-providers {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.watch-providers > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.skeleton {
+    background: linear-gradient(90deg, hsl(200, 20%, 85%) 25%, hsl(200, 20%, 95%) 50%, hsl(200, 20%, 85%) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s linear infinite;
+}
+
+.skeleton-item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 200px;
+    gap: 1rem;
+    max-width: 600px;
+    margin-top: 64px;
+}
+
+.skeleton-poster {
+    width: 120px;
+    height: 200px;
+    border-radius: 0.25rem;
+}
+
+.skeleton-info {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 1.5rem;
+}
+
+.skeleton-title {
+   width: 30%;
+    height: 1rem;
+    border-radius: 0.25rem;
+}
+
+.skeleton-text {
+    width: 100%;
+    height: 1rem;
+    border-radius: 0.25rem;
+}
+
+.skeleton-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.skeleton-icons {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+}
+
+.skeleton-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
