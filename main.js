@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsContainer = document.querySelector('#search-results');
     const searchBtn = document.querySelector('#search-btn');
     const watchlistContainer = document.querySelector('#watchlist-container');
-    const emptyWatchlistMessage = document.querySelector('#empty-watchlist');
     const regionSelectWatchlist = document.querySelector('#region-select-watchlist');
     const regionSelectSearch = document.querySelector('#region-select-search');
 
@@ -57,6 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     localStorage.wannaWatchList = JSON.stringify(updatedWatchlist);
                 }
                 item.remove();
+                if (JSON.parse(localStorage.wannaWatchList).length < 1) {
+                    displayEmptyMessage();
+                }
                 console.log(localStorage.wannaWatchList);
             }
         }
@@ -232,11 +234,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (watchlistContainer) {
         regionSelectWatchlist.value = JSON.parse(localStorage.region);
 
-
         if (JSON.parse(localStorage.wannaWatchList).length < 1) {
-            emptyWatchlistMessage.classList.remove('hidden');
+            displayEmptyMessage();
         } else {
-            emptyWatchlistMessage.classList.add('hidden');
             toggleLoadingSkeleton(watchlistContainer, true);
         }
         
@@ -253,6 +253,16 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem("region", JSON.stringify(regionSelectWatchlist.value));
         })
     }    
+
+    //Empty Watchlist State
+    function displayEmptyMessage() {
+        watchlistContainer.innerHTML = `
+            <div id="empty-watchlist" class="empty-state">
+                <h2>Your Binge list is empty!</h2>
+                <h2>Search for movies and shows to add to your Binge list</h2>
+            </div> 
+        `
+    }
 
     //Loading State
     function toggleLoadingSkeleton(container, isLoading) {
