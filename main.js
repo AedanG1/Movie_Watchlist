@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const regionSelectSearch = document.querySelector('#region-select-search');
 
     //Open Movie Database API
-    const omdbUrl = 'http://www.omdbapi.com/';
+    const omdbUrl = 'https://www.omdbapi.com/';
     const omdbKey = 'e89f91c6';
 
     //The Movie Database API
